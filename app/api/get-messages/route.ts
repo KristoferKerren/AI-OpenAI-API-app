@@ -13,9 +13,9 @@ export async function GET(request: NextRequest) {
   try {
     const messages = await openai.beta.threads.messages.list(threadId);
 
-    console.log({ messages: messages });
+    console.log(messages);
 
-    return Response.json({ messages: messages });
+    return Response.json({ messages: messages.data });
   } catch (e) {
     console.log(e);
     return Response.json({ error: e });

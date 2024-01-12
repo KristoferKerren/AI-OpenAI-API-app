@@ -21,7 +21,7 @@ export async function GET(request: NextRequest) {
       assistant_id: assistantId,
     });
 
-    console.log({ run: run });
+    console.log({ run });
 
     return Response.json({ run: run });
   } catch (e) {

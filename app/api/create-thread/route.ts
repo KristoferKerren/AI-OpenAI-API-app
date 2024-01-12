@@ -4,11 +4,11 @@ export async function GET() {
   const openai = new OpenAI();
 
   try {
-    const response = await openai.beta.threads.create();
+    const thread = await openai.beta.threads.create();
 
-    console.log(response);
+    console.log({ thread });
 
-    return Response.json({ thread: response });
+    return Response.json({ thread: thread });
   } catch (e) {
     console.log(e);
     return Response.json({ error: e });

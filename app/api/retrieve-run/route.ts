@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
   try {
     const run = await openai.beta.threads.runs.retrieve(threadId, runId);
 
-    console.log({ run: run });
+    console.log({ run });
 
     return Response.json({ run: run });
   } catch (e) {
